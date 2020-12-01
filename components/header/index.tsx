@@ -1,8 +1,10 @@
 import { container, title } from './styles'
+import Logo from '@components/logo'
 
 const Header = () => (
   <header css={container}>
-    <h1 css={title}>All about NextJS ✨</h1>
+    <Logo />
+    <h1 css={title}>devlog</h1>
   </header>
 )
 
