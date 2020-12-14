@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import Header from '@components/header'
 import Navigation from '@components/navigation'
 import SEO, { SEOProps } from '@components/seo'
+import Footer from '@components/footer'
 
 type PageProps = {
   meta?: SEOProps
@@ -14,7 +15,8 @@ const Page = ({ meta, children }: PageProps) => (
     <main>
       <Header />
       <Navigation />
-      {children}
+      <div>{children}</div>
+      <Footer />
     </main>
   </>
 )

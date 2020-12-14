@@ -10,7 +10,6 @@ const SEO = ({ title, description }: SEOProps) => {
   const pageTitle = title
     ? `${title} :: ${siteMeta.siteName}`
     : siteMeta.siteName
-  console.log(pageTitle)
   const pageDescription = description ? description : siteMeta.description
 
   return (
