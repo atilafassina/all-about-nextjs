@@ -15,6 +15,8 @@ const rotate = keyframes`
 
 const header = css`
   display: flex;
+  max-width: var(--page-width);
+  margin: 0 auto;
   justify-content: space-around;
   align-items: center;
   padding: 0 2ch;
@@ -38,7 +40,7 @@ const reactIconStyles = css`
 `
 
 const bio = css`
-  margin-top: 5ch;
+  margin: 5ch 0;
 
   p {
     max-width: 60ch;
@@ -54,6 +56,8 @@ const footer = css`
   margin-top: 5ch;
   margin-right: 5ch;
   text-align: right;
+  max-width: var(--page-width);
+  margin: 0 auto;
 `
 
 const About = () => (
