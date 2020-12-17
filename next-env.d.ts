@@ -16,10 +16,13 @@ declare module 'next-mdx-remote/render-to-string' {
   function renderToString(
     source: string,
     renderToStringParams?: RenderToStringParams
-  ): string
+  ): object
+
   export default renderToString
 }
+
 declare module 'next-mdx-remote/hydrate' {
-  function hydrate(components: HydrateParams): void
+  function hydrate(mdxObject: object, components?: HydrateParams): string
+
   export default hydrate
 }

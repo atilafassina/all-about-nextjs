@@ -3,9 +3,23 @@ import path from 'path'
 import renderToString from 'next-mdx-remote/render-to-string'
 import matter from 'gray-matter'
 
-type PostFile = {
+export type PostFile = {
   filepath: string
   slug: string
+}
+
+export type FrontMatter = {
+  path: string
+  date: string
+  title: string
+}
+
+export type FormattedPost = {
+  filepath: string
+  slug: string
+  content: string
+  frontMatter: FrontMatter
+  mdx: object
 }
 
 const getDirData = (source: string): PostFile[] =>
