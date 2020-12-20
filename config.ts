@@ -9,4 +9,6 @@ const metadata = {
   },
 }
 
-export { metadata }
+const POSTS_DIR = './posts'
+
+export { metadata, POSTS_DIR}

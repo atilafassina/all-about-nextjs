@@ -5,6 +5,8 @@ import {
 } from 'next'
 import { getPosts, FormattedPost, PostFile } from '@shared/get-posts'
 import hydrate from 'next-mdx-remote/hydrate'
+import PostLayout from '@layouts/post'
+import { POSTS_DIR } from 'config'
 
 export default function Post({
   mdxContent,
@@ -13,17 +15,17 @@ export default function Post({
   const content = hydrate(mdxContent, { components: {} })
 
   return (
-    <>
+    <PostLayout frontMatter={frontMatter}>
       <header>
         <span>{frontMatter.title}</span>
       </header>
       <article>{content}</article>
-    </>
+    </PostLayout>
   )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getPosts('./posts')
+  const posts = await getPosts(POSTS_DIR)
 
   const paths = posts.map(({ slug }) => ({
     params: {
@@ -39,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const { slug } = params as { slug: string }
-  const posts: PostFile[] = await getPosts('./posts')
+  const posts: PostFile[] = await getPosts(POSTS_DIR)
 
   const { mdx, frontMatter } = posts.find(
     ({ slug: routeSlug }) => routeSlug === slug

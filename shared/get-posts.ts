@@ -12,6 +12,7 @@ export type FrontMatter = {
   path: string
   date: string
   title: string
+  description: string
 }
 
 export type FormattedPost = {
