@@ -14,14 +14,7 @@ export default function Post({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const content = hydrate(mdxContent, { components: {} })
 
-  return (
-    <PostLayout frontMatter={frontMatter}>
-      <header>
-        <span>{frontMatter.title}</span>
-      </header>
-      <article>{content}</article>
-    </PostLayout>
-  )
+  return <PostLayout frontMatter={frontMatter}>{content}</PostLayout>
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

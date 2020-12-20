@@ -16,9 +16,15 @@ const container = css`
   place-items: center;
   background-color: var(--background-accent);
 `
-
 const title = css`
   ${SR_ONLY}
 `
 
-export { container, title }
+const postTitle = css`
+  font-size: 4.5rem;
+  text-align: center;
+  padding: 0 1ch;
+  color: var(--white);
+`
+
+export { container, title, postTitle }
