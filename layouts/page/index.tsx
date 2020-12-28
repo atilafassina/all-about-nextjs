@@ -3,6 +3,7 @@ import Header from '@components/header'
 import Navigation from '@components/navigation'
 import SEO, { SEOProps } from '@components/seo'
 import Footer from '@components/footer'
+import { wrapper } from './styles'
 
 type PageProps = {
   meta?: SEOProps
@@ -12,10 +13,10 @@ type PageProps = {
 const Page = ({ meta, children }: PageProps) => (
   <>
     <SEO {...meta} />
-    <main>
+    <main css={wrapper}>
       <Header />
       <Navigation />
-      <div>{children}</div>
+      <article>{children}</article>
       <Footer />
     </main>
   </>

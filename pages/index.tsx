@@ -2,12 +2,15 @@ import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
 import Page from '@layouts/page'
 import { getPosts } from '@shared/get-posts'
+import ShortBio from '@components/short-bio'
 import { POSTS_DIR } from 'config'
+
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Page>
+      <ShortBio />
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
