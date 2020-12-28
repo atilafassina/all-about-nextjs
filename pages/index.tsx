@@ -1,8 +1,8 @@
 import { InferGetStaticPropsType } from 'next'
-import Link from 'next/link'
 import Page from '@layouts/page'
 import { getPosts } from '@shared/get-posts'
 import ShortBio from '@components/short-bio'
+import PostIndex from '@components/post-index'
 import { POSTS_DIR } from 'config'
 
 export default function Home({
@@ -11,15 +11,7 @@ export default function Home({
   return (
     <Page>
       <ShortBio />
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/${post.slug}`}>
-              <a>{post.frontMatter.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <PostIndex list={posts} />
     </Page>
   )
 }

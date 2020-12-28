@@ -31,7 +31,8 @@ const getDirData = (source: string): PostFile[] =>
 
 const formatPostList = async ({ filepath, slug }: PostFile) => {
   const mdxSource = await fs.readFile(filepath)
-  const { content, data: frontMatter } = matter(mdxSource)
+  const { content, data } = matter(mdxSource)
+  const frontMatter = data as FrontMatter
 
   const mdx = await renderToString(content, {
     components: {},
