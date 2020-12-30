@@ -7,12 +7,13 @@ import { getPosts, FormattedPost, PostFile } from '@shared/get-posts'
 import hydrate from 'next-mdx-remote/hydrate'
 import PostLayout from '@layouts/post'
 import { POSTS_DIR } from 'config'
+import mdxComponents from '@shared/mdx-components'
 
 export default function Post({
   mdxContent,
   frontMatter,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const content = hydrate(mdxContent, { components: {} })
+  const content = hydrate(mdxContent, { components: mdxComponents })
 
   return <PostLayout frontMatter={frontMatter}>{content}</PostLayout>
 }

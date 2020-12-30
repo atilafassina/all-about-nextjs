@@ -2,6 +2,7 @@ import { promises as fs, readdirSync } from 'fs'
 import path from 'path'
 import renderToString from 'next-mdx-remote/render-to-string'
 import matter from 'gray-matter'
+import mdxComponents from '@shared/mdx-components'
 
 export type PostFile = {
   filepath: string
@@ -35,7 +36,7 @@ const formatPostList = async ({ filepath, slug }: PostFile) => {
   const frontMatter = data as FrontMatter
 
   const mdx = await renderToString(content, {
-    components: {},
+    components: mdxComponents,
     scope: frontMatter,
   })
 

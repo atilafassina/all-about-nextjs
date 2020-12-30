@@ -7,6 +7,33 @@ description: This is why I started writing posts
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend convallis velit, at pellentesque orci egestas sit amet. Aenean ligula lorem, porta fermentum orci eu, ornare tempus elit. Vivamus laoreet turpis vel ex maximus suscipit. Praesent at lorem quis ante venenatis elementum. Ut elit magna, feugiat non viverra et, sollicitudin quis tortor. Sed facilisis massa non semper viverra. Nullam sed diam tincidunt, interdum neque in, consequat sapien. Suspendisse viverra sodales est vitae malesuada. Vestibulum nec urna vestibulum, accumsan diam sed, iaculis orci. Pellentesque a ultrices purus. Donec venenatis fermentum aliquam. Nam ante erat, viverra ut dictum sit amet, bibendum in ipsum. Curabitur ornare sagittis magna, quis venenatis enim condimentum ac. In dolor diam, sollicitudin vel varius tempor, vestibulum ut nunc.
 
+## Some Code
+
+```tsx
+const Code = ({ children, className = 'language-jsx' }: CodeProps) => {
+  const language = className.replace(/language-/, '') as Language
+
+  return (
+    <Highlight {...defaultProps} code={children} language={language}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              <span>{i + 1}</span>
+              <span>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </span>
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  )
+}
+```
+
 ![quill](/peter-quill.jpg)
 
 ## A topic
