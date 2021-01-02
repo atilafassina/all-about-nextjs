@@ -2,7 +2,8 @@ import { css } from '@emotion/react'
 
 const indexContainer = css`
   list-style: none;
-  margin: 10ch 0 5ch;
+  margin: 10ch auto 5ch;
+  max-width: var(--page-width);
 
   > li + li {
     margin-top: 3ch;
@@ -12,10 +13,15 @@ const postEntry = css`
   display: flex;
   flex-direction: row;
   margin-left: 5ch;
+  transition: margin-left 250ms linear;
 
   :hover svg,
   :focus svg {
     transform: translateY(-25px) translateX(10px) rotate(45deg);
+  }
+
+  @media (max-width: 800px) {
+    margin-left: 0;
   }
 `
 

@@ -4,16 +4,18 @@ const wrapper = css`
   margin: 0 auto;
   max-width: var(--page-width);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-auto-flow: column;
   grid-gap: 5ch;
 
   @media (max-width: 800px) {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    grid-auto-flow: row;
   }
 `
 
 const profilePic = css`
   border-radius: 50%/10%;
+  object-fit: contain;
 `
 
 const text = css`

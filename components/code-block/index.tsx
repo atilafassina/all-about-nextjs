@@ -24,6 +24,7 @@ const Code = ({ children, className = 'language-jsx' }: CodeProps) => {
             margin: '1em 0',
             padding: '0.5em',
             borderRadius: '5px',
+            overflow: 'auto',
           }}
         >
           {tokens.map((line, i) => (
