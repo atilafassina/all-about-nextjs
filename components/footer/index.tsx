@@ -1,7 +1,7 @@
 import { IoLogoGithub as Github } from 'react-icons/io'
 import { FiTwitter as Twitter } from 'react-icons/fi'
 import { SiUdemy as Udemy } from 'react-icons/si'
-import { metadata } from 'config'
+import { METADATA } from 'config'
 import { leakedList } from '@shared/style-helpers'
 import Footprint from '@components/footprint'
 import { footer } from './styles'
@@ -12,7 +12,7 @@ const Footer = () => (
       <li>
         <a
           aria-label="To Atila Fassina's github profile"
-          href={metadata.author.githubUrl}
+          href={METADATA.author.githubUrl}
           target="_blank"
           rel="noopener"
         >
@@ -22,7 +22,7 @@ const Footer = () => (
       <li>
         <a
           aria-label="To Atila Fassina's twitter profile"
-          href={metadata.author.twitterUrl}
+          href={METADATA.author.twitterUrl}
           target="_blank"
           rel="noopener"
         >
@@ -32,7 +32,7 @@ const Footer = () => (
       <li>
         <a
           aria-label="To this course's Udemy page"
-          href={metadata.author.udemyUrl}
+          href={METADATA.author.udemyUrl}
           target="_blank"
           rel="noopener"
         >

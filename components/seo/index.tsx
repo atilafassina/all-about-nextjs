@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { metadata as siteMeta } from 'config'
+import { METADATA as siteMeta } from 'config'
 
 export type SEOProps = {
   title?: string
