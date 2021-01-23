@@ -3,7 +3,8 @@ import {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from 'next'
-import { getPosts, FormattedPost, PostFile } from '@shared/get-posts'
+import type { FormattedPost, PostFile } from '@shared/types'
+import { getPosts } from '@shared/get-posts'
 import hydrate from 'next-mdx-remote/hydrate'
 import PostLayout from '@layouts/post'
 import { POSTS_DIR } from 'config'

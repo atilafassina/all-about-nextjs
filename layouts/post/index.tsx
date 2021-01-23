@@ -5,7 +5,7 @@ import Header from '@components/header'
 import Navigation from '@components/navigation'
 import SEO from '@components/seo'
 import Footer from '@components/footer'
-import { FrontMatter } from '@shared/get-posts'
+import type { FrontMatter } from '@shared/types'
 import { postStyles, postContainer } from './styles'
 
 type PostProps = {

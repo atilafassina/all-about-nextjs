@@ -1,29 +1,9 @@
 import { promises as fs, readdirSync } from 'fs'
 import path from 'path'
 import renderToString from 'next-mdx-remote/render-to-string'
-import type { MdxRemote } from 'next-mdx-remote/types'
 import matter from 'gray-matter'
 import mdxComponents from '@shared/mdx-components'
-
-export type PostFile = {
-  filepath: string
-  slug: string
-}
-
-export type FrontMatter = {
-  path: string
-  date: string
-  title: string
-  description: string
-}
-
-export type FormattedPost = {
-  filepath: string
-  slug: string
-  content: string
-  frontMatter: FrontMatter
-  mdx: MdxRemote.Source
-}
+import type { PostFile, FrontMatter } from './types'
 
 const getDirData = (source: string): PostFile[] =>
   readdirSync(source).map((name) => ({

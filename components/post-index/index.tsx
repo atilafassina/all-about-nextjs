@@ -1,6 +1,6 @@
+import type { FrontMatter } from '@shared/types'
 import Link from 'next/link'
 import { AiOutlineRocket as Rocket } from 'react-icons/ai'
-import { FrontMatter } from '@shared/get-posts'
 import {
   indexContainer,
   postEntry,
