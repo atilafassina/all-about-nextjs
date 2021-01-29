@@ -1,10 +1,11 @@
 import { IoLogoGithub as Github } from 'react-icons/io'
 import { FiTwitter as Twitter } from 'react-icons/fi'
-import { SiUdemy as Udemy } from 'react-icons/si'
+import { SiUdemy as Udemy, SiRss as Rss } from 'react-icons/si'
 import { metadata } from 'config'
 import { leakedList } from '@shared/style-helpers'
 import Footprint from '@components/footprint'
 import { footer } from './styles'
+import Link from 'next/link'
 
 const Footer = () => (
   <footer css={footer}>
@@ -38,6 +39,13 @@ const Footer = () => (
         >
           <Udemy />
         </a>
+      </li>
+      <li>
+        <Link href="/api/rss">
+          <a aria-label="Get RSS feed">
+            <Rss />
+          </a>
+        </Link>
       </li>
     </ul>
     <Footprint />
