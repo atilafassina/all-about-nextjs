@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import mdxComponents from '@shared/mdx-components'
 import type { PostFile, FrontMatter } from './types'
 
-const getDirData = (source: string): PostFile[] =>
+const getDirData = (source: string) =>
   readdirSync(source).map((name) => ({
     filepath: `${source}/${name}`,
     slug: name.replace(new RegExp(path.extname(name) + '$'), ''),
