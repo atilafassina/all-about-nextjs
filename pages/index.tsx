@@ -1,12 +1,11 @@
 import { InferGetStaticPropsType } from 'next'
 import Page from '@layouts/page'
 import { getPosts } from '@shared/get-posts'
+import { getYoutubeVideos } from '@shared/get-videos'
 import ShortBio from '@components/short-bio'
 import PostIndex from '@components/post-index'
 import { POSTS_DIR } from 'config'
 
-const { YOUTUBE_TOKEN, CHANNEL_ID } = process.env
-const YOUTUBE_API = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&key=${YOUTUBE_TOKEN}&type=video&order=date&maxResults=6`
 const DAY = 60 * 60 * 24
 
 export default function Home({
@@ -23,9 +22,8 @@ export default function Home({
 }
 
 export const getStaticProps = async () => {
-  const youtubeResp = await fetch(YOUTUBE_API)
-  const videos = await youtubeResp.json()
   const posts = await getPosts(POSTS_DIR)
+  const videos = await getYoutubeVideos()
   const allMdx = posts.map(({ slug, frontMatter }) => ({
     slug,
     frontMatter,
@@ -34,9 +32,9 @@ export const getStaticProps = async () => {
   return {
     props: {
       posts: allMdx,
-      videos
+      videos,
     },
 
-    revalidate: DAY
+    revalidate: DAY,
   }
 }
