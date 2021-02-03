@@ -25,7 +25,7 @@ export const youtubeCard = css`
   place-items: center;
 
   :hover,
-  :focus {
+  :focus-within {
     color: var(--color-accent);
 
     img {
